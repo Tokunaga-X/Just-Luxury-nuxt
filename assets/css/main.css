@@ -1,0 +1,42 @@
+body {
+  box-sizing: border-box;
+  font-family: "ZCOOL XiaoWei", serif;
+  overflow-x: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+button {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #3b8070;
+  color: #3b8070;
+  text-decoration: none;
+  padding: 10px 30px;
+}
+button:hover {
+  color: #fff;
+  background-color: #3b8070;
+}
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.75s;
+}
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+  transform: scale(0.5);
+}

@@ -1,0 +1,106 @@
+<template>
+  <div class="navContainer">
+    <nav>
+      <img src="../../assets/image/logo.png" @load="loadImage" alt="logo" title="logo" />
+      <ul>
+        <li class="animated fadeInDown delay1">
+          <router-link to="/">主页</router-link>
+        </li>
+        <li class="animated fadeInDown delay2">
+          <router-link to="/shop">选购</router-link>
+        </li>
+        <li class="animated fadeInDown delay3">
+          <router-link to="/shopcar">购物车</router-link>
+        </li>
+        <li class="animated fadeInDown delay4">
+          <router-link to="/contact">联系</router-link>
+        </li>
+      </ul>
+    </nav>
+    <div class="topPic" v-if="topbarShow"></div>
+  </div>
+</template>
+<script>
+export default {
+  name: "pageNav",
+  methods: {
+    loadImage() {
+      this.imageShow = true;
+    }
+  },
+  computed: {
+    topbarShow() {
+      return this.$store.state.topbarShow;
+    }
+  }
+};
+</script>
+<style lang="scss" scoped>
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(1, 1, 1, 0.3);
+  z-index: 5;
+  width: 100vw;
+  height: 12vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-left: 12vw;
+    li {
+      flex: 1;
+      font-size: 1rem;
+      z-index: 3;
+      position: relative;
+      a {
+        text-decoration: none;
+        color: white;
+        letter-spacing: 2px;
+        padding: 0.5rem;
+        transition: all 0.5s ease;
+      }
+    }
+    .delay1 {
+      animation-delay: 0.5s;
+    }
+    .delay2 {
+      animation-delay: 1s;
+    }
+    .delay3 {
+      animation-delay: 1.5s;
+    }
+    .delay4 {
+      animation-delay: 2s;
+    }
+  }
+  img {
+    flex: 1;
+    padding-left: 7vw;
+  }
+}
+.topPic {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 35vh;
+  background: url("../../assets/image/topbar.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.topPic::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 35vh;
+  background: rgba(0, 0, 0, 0.4);
+}
+</style>
